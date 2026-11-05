@@ -1,0 +1,15 @@
+{
+  "description": "Envía los eventos de la sesión al canvas local (silencioso si el canvas no está corriendo)",
+  "hooks": {
+    "SessionStart": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "PreToolUse": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "PostToolUse": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "PostToolUseFailure": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "SubagentStart": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "SubagentStop": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "Stop": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "StopFailure": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }],
+    "SessionEnd": [{ "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/emit.mjs"], "async": true, "timeout": 10 }] }]
+  }
+}

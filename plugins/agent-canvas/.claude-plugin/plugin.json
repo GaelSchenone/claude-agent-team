@@ -1,0 +1,9 @@
+{
+  "name": "agent-canvas",
+  "version": "0.1.0",
+  "description": "Panel local en vivo con los agentes y subagentes de Claude Code. Requiere Node 18 o superior.",
+  "license": "MIT",
+  "author": {
+    "name": "GaelSchenone"
+  }
+}

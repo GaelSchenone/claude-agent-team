@@ -1,0 +1,19 @@
+{
+  "name": "gael-tools",
+  "description": "Equipo de agentes para Claude Code y un canvas para verlos trabajar",
+  "owner": {
+    "name": "GaelSchenone"
+  },
+  "plugins": [
+    {
+      "name": "agent-team",
+      "source": "./plugins/agent-team",
+      "description": "Líder técnico y especialistas (backend, frontend, base de datos, QA, revisión, diseño) con skills propias"
+    },
+    {
+      "name": "agent-canvas",
+      "source": "./plugins/agent-canvas",
+      "description": "Panel local en vivo que muestra los agentes y subagentes de Claude Code (requiere Node 18+)"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agent-team",
+  "version": "0.1.0",
+  "description": "Equipo de agentes: tech-lead que planifica y reparte, y especialistas (backend, frontend, base de datos, QA, revisión, diseño).",
+  "license": "MIT",
+  "author": {
+    "name": "GaelSchenone"
+  }
+}
