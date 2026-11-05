@@ -2,6 +2,16 @@
 
 Panel local en vivo para mirar qué hacen los agentes y subagentes de una sesión de Claude Code. Los hooks del plugin le mandan los eventos de la sesión a un servidor local y el panel los dibuja en el navegador.
 
+![Demo animada del canvas: el orquestador lanza subagentes, se mandan mensajes y cada uno termina o falla](../../docs/demo.gif)
+
+| Vista general | Chat de un subagente | Detalle de una herramienta |
+| --- | --- | --- |
+| ![Grafo con el orquestador y sus subagentes](../../docs/overview.png) | ![Conversación de un subagente con contexto y tareas](../../docs/subagente.png) | ![Ventana con la salida de grep](../../docs/herramienta.png) |
+
+> Imágenes de la demo con datos simulados (misma interfaz que el canvas de OpenCode). En Claude Code la caja de mensajes está deshabilitada y no hay salida en vivo de herramientas.
+
+Para ver el canvas andando sin gastar una sesión de Claude Code: `node scripts/demo.mjs` y abrí http://127.0.0.1:7790 (datos inventados, dura ~35 s, no toca tu canvas real del puerto 7789).
+
 ## Instalación
 
 ```text

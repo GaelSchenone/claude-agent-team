@@ -7,6 +7,14 @@ Marketplace de Claude Code llamado `gael-tools` con dos plugins:
 
 No es un framework ni una herramienta que se ejecute sola: son definiciones de agentes, skills, hooks y un servidor local que Claude Code carga cuando instalás los plugins.
 
+![Demo animada del canvas: el orquestador lanza subagentes, se mandan mensajes y cada uno termina o falla](docs/demo.gif)
+
+| Vista general | Chat de un subagente | Detalle de una herramienta |
+| --- | --- | --- |
+| ![Grafo con el orquestador y sus subagentes](docs/overview.png) | ![Conversación de un subagente con contexto y tareas](docs/subagente.png) | ![Ventana con la salida de grep](docs/herramienta.png) |
+
+> Las imágenes son de la demo con datos simulados. El canvas de Claude Code usa la misma interfaz que el de OpenCode; la diferencia es que acá la caja de mensajes está deshabilitada (Claude Code no permite escribirle a una sesión abierta desde afuera).
+
 ## Requisitos
 
 - Claude Code instalado.
