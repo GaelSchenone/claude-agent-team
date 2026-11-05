@@ -604,7 +604,13 @@ function byId(id){ return state.sessions.find(s => s.id === id); }
 function childrenOf(id){ return state.sessions.filter(s => s.parentID === id).sort((a,b) => a.created - b.created); }
 function isRoot(s){ return !s.parentID || !byId(s.parentID); }
 function cleanTitle(t){ return String(t || "").replace(/\s*\(@[^)]*\)\s*$/, ""); }
-function nameOf(s){ return (s && (s.agent || cleanTitle(s.title))) || "agente"; }
+const GENERIC_AGENTS = new Set(["general", "general-purpose"]);
+function nameOf(s){
+  if (!s) return "agente";
+  const t = cleanTitle(s.title).trim();
+  if (s.parentID && t && (!s.agent || GENERIC_AGENTS.has(s.agent))) return t;
+  return s.agent || t || "agente";
+}
 function fmtDur(ms){ const s = Math.max(0, Math.floor(ms / 1000)); return String(Math.floor(s / 60)).padStart(2,"0") + ":" + String(s % 60).padStart(2,"0"); }
 function cnt(id){ let c = counters.get(id); if (!c){ c = { tx: 0, rx: 0 }; counters.set(id, c); } return c; }
 
@@ -700,7 +706,7 @@ function updateNode(r, n, p){
   const sig = [label, role, n.model, c.tx, c.rx, st, sel].join("|");
   if (sig !== r.sig){
     r.sig = sig;
-    r.el.innerHTML = nodeHTML(label, role, n.model, st, sel, c.tx, c.rx);
+    r.el.innerHTML = nodeHTML(fit(label, D.W - 6), role, n.model, st, sel, c.tx, c.rx);
     r.actEl = r.el.querySelector(".act");
     r.spinEl = r.el.querySelector(".spin");
     r.actTxt = ""; r.actCls = "";
